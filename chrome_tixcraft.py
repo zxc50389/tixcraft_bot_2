@@ -34,6 +34,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from urllib3.exceptions import InsecureRequestWarning
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 
 import util
 from NonBrowser import NonBrowser
@@ -2150,12 +2152,17 @@ def tixcraft_auto_ocr(driver, ocr, away_from_keyboard_enable, previous_answer, C
     return is_need_redo_ocr, previous_answer, is_form_sumbited
 
 def tixcraft_ticket_main_agree(driver, config_dict):
-    is_finish_checkbox_click = False
-    for i in range(3):
-        is_finish_checkbox_click = check_checkbox(driver, By.CSS_SELECTOR, '#TicketForm_agree')
-        if is_finish_checkbox_click:
-            break
-    return is_finish_checkbox_click
+    try:
+        checkbox = driver.find_element(By.ID, 'TicketForm_agree')
+        if not checkbox.is_selected():
+            print("勾選 checkbox 中...")
+            driver.execute_script("arguments[0].click();", checkbox)
+        else:
+            print("checkbox 已經是勾選狀態")
+        return True
+    except NoSuchElementException:
+        print("找不到 checkbox 元素")
+        return False
 
 def get_tixcraft_ticket_select_by_keyword(driver, config_dict, area_keyword_item):
     show_debug_message = True       # debug.
@@ -2334,16 +2341,8 @@ def tixcraft_assign_ticket_number(driver, config_dict):
 
 
 def tixcraft_ticket_main(driver, config_dict, ocr, Captcha_Browser, domain_name):
-    is_agree_at_webdriver = False
-    if not config_dict["browser"] in CONST_CHROME_FAMILY:
-        is_agree_at_webdriver = True
-    else:
-        if not config_dict["advanced"]["chrome_extension"]:
-            is_agree_at_webdriver = True
-    if is_agree_at_webdriver:
-        # use extension instead of selenium.
-        # checkbox javascrit code at chrome extension.
-        tixcraft_ticket_main_agree(driver, config_dict)
+    # 不管什麼瀏覽器或有沒有開啟 extension，都執行勾選
+    tixcraft_ticket_main_agree(driver, config_dict)
 
     is_ticket_number_assigned = False
 
