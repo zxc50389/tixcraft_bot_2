@@ -1904,22 +1904,12 @@ async def nodriver_facebook_main(tab, config_dict):
 
 def get_nodriver_browser_args():
     browser_args = [
-        "--user-agent=%s" % (USER_AGENT),
-        "--disable-2d-canvas-clip-aa",
-        "--disable-3d-apis",
         "--disable-animations",
         "--disable-app-info-dialog-mac",
         "--disable-background-networking",
         "--disable-backgrounding-occluded-windows",
-        "--disable-bookmark-reordering",
-        "--disable-boot-animation",
         "--disable-breakpad",
-        "--disable-canvas-aa",
-        "--disable-client-side-phishing-detection",
-        "--disable-cloud-import",
-        "--disable-component-cloud-policy",
         "--disable-component-update",
-        "--disable-composited-antialiasing",
         "--disable-default-apps",
         "--disable-dev-shm-usage",
         "--disable-device-discovery-notifications",
@@ -1931,7 +1921,6 @@ def get_nodriver_browser_args():
         "--disable-login-animations",
         "--disable-login-screen-apps",
         "--disable-notifications",
-        "--disable-office-editing-component-extension",
         "--disable-password-generation",
         "--disable-popup-blocking",
         "--disable-renderer-backgrounding",
@@ -1945,12 +1934,10 @@ def get_nodriver_browser_args():
         "--no-default-browser-check",
         "--no-first-run",
         "--no-pings",
-        "--no-sandbox"
         "--no-service-autorun",
         "--password-store=basic",
-        "--remote-allow-origins=*",
+        "--remote-debugging-host=127.0.0.1",
         "--lang=zh-TW",
-        #"--disable-remote-fonts",
     ]
     return browser_args
 
