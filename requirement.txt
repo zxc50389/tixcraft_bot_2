@@ -6,7 +6,8 @@ ddddocr
 idna
 looseversion
 nodriver
-numpy
+numpy==1.24.4
+onnxruntime==1.15.1
 Pillow
 playsound==1.2.2
 pyperclip
