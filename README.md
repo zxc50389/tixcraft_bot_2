@@ -9,9 +9,7 @@
 
 ### Step 1: 取得 source code:
 
-```bash
-git clone https://github.com/max32002/tixcraft_bot.git
-```
+
 
 ### Step 2: 進入 clone 的資料夾: tixcraft_bot:
 
