@@ -29,52 +29,6 @@ MaxBot is a FREE and open source bot program. Good luck getting your expected fo
 
 </details>
 
-## Protect Account 保護你的帳戶
-
-<details>
-<summary><code><b>保護你的帳戶</b>（點我展開）</code></summary>
-
-目前的售票系統售票無法阻擋機器人進行購票，官方只能從伺服器存取記錄來看到速度過快的記錄，並將之視之為機器人，對其封鎖帳號，短時間刷新幾秒會被鎖帳號並沒有明確的遊戲規則。
-
-Q：在沒有違法的前提下，要搶拓元的蛋黃酥與 KKTIX 的（非台灣）海外活動，怎麼才不會被官方鎖帳號？
-
-A：從之前 MaxBot 執行秒數來看，較好的電腦花費秒數大約 8 秒，一般電腦大約花費 10 ～ 12 秒，以秒殺的蛋黃酥來說，建議設定機器人啟動時間為開搶前 2 秒，停止時間為開搶後的 15 秒，是可以降低被官方鎖帳號的機率。
-
-而清票，需要長時間地重新整理，請以自然人能處理的前提下，設定重新整理的延遲時間為一般人可以處理的 2 秒以上。
-
-如果說你想增加在伺服器上存取記錄的變化程度，可以使用秒數的關鍵字功能，讓 MaxBot 在特定秒數時啟動與暫停。參考影片：https://youtu.be/u3YQCZZu6kE
-
-MaxBot 的出發點是幫助大家在購票時，可以有效率地自動化在花時間、重覆又無聊的刷新網頁。
-
-如果有任何違法，必定立即修正。
-
-</details>
-
-## Download 蛋黃酥上車程式下載
-
-蛋黃酥上車程式下載:
-https://github.com/max32002/tixcraft_bot/releases
-
-下載說明:
-
-- 目前有打包的「執行檔」，只有 Windows 平台，其他作業系統需要使用原始碼來執行。當然 Windows 平台也可以用原始碼執行 MaxBot.
-- 如果你是要用「原始碼」執行 MaxBot, 在透過 git clone 或在 github 按下載原始碼的 zip 檔， python 版本使用 3.7 / 3.8 / 3.9 / 3.10 這 4 個版號測試功能正常。
-- 如果有辦法的話，建議使用原始碼來執行 MaxBot，執行上的「效率」與「相容性」的問題會較少。
-
-
-
-## Demo 示範影片
-
-[點此查看示範影片](https://github.com/max32002/tixcraft_bot/blob/master/demo_video.md)
-
-## How to Use 如何使用
-
-如何使用網頁說明:
-- tixcraft / indievox / ticketmaster: https://max-everyday.com/2018/03/tixcraft-bot/
-- kktix: https://max-everyday.com/2018/12/kktix-bot/
-- cityline: https://max-everyday.com/2019/03/cityline-bot/
-- urbtix: https://max-everyday.com/2019/02/urbtix-bot/
-- hkticketing / galaxymacau: https://max-everyday.com/2023/01/hkticketing-bot/
 
 ## How to Execute Source Code 透過原始碼的執行方法
 
